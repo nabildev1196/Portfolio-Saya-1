@@ -2,20 +2,20 @@ import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Card } from "@/components/ui/Card";
-import { values } from "@/data/portfolio";
+import { engineeringConnection, values } from "@/data/portfolio";
 
 export function Values() {
   return (
-    <Section id="values">
+    <Section id="software-fit">
       <Container>
         <SectionHeading
-          id="values-heading"
-          eyebrow="How I Work"
-          title="Engineering values that show up in the details."
-          description="I want the experience of working with me to feel clear, thoughtful, and dependable from first conversation to final delivery."
+          id="software-fit-heading"
+          eyebrow="Software Engineering Fit"
+          title={engineeringConnection.title}
+          description={engineeringConnection.text}
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {values.map((value) => {
             const Icon = value.icon;
 

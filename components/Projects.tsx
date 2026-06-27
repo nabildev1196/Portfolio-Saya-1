@@ -13,12 +13,12 @@ export function Projects() {
       <Container>
         <SectionHeading
           id="projects-heading"
-          eyebrow="Projects"
-          title="Selected work you can shape into a stronger portfolio."
-          description="These sample cards are ready to be replaced with real projects, case studies, deployments, and repositories as your body of work grows."
+          eyebrow="Software Projects"
+          title="Practical project ideas connected to real workflows."
+          description="These concepts are intentionally grounded in the environments I understand: scholarship administration, clinic operations, finance planning, and executive support."
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {projects.map((project) => {
             const Icon = project.icon;
 

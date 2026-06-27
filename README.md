@@ -37,7 +37,7 @@ git push
 
 ## Edit Portfolio Content
 
-Most personal details, skills, projects, journey items, and contact links are stored in:
+Most personal details, skills, projects, experience items, and contact links are stored in:
 
 ```txt
 data/portfolio.ts

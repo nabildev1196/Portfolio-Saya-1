@@ -3,9 +3,7 @@ import {
   Brain,
   Braces,
   Code2,
-  Database,
   GitFork,
-  Globe2,
   Layers3,
   Mail,
   MessageCircle,
@@ -22,13 +20,14 @@ export const profile = {
   name: "Nabil Khairi",
   role: "Software Engineer",
   email: "nabil@example.com",
-  headline: "Hi, I’m Nabil Khairi",
+  photo: "nabil-khairi.png",
+  headline: "Hi, I’m Nabil Khairi.",
   subheadline:
-    "A passionate software engineer focused on building clean, useful, and scalable digital products.",
+    "I build practical digital solutions with a strong foundation in operations, finance, and real-world business workflows.",
   intro:
-    "I care about the craft behind reliable software: clear architecture, thoughtful interfaces, and practical solutions that help people get things done.",
+    "I’m passionate about software engineering and focused on creating clean, useful, and scalable products that solve real problems.",
   about:
-    "I’m Nabil Khairi, a software engineer who enjoys solving problems, learning new technologies, and turning ideas into practical software. I’m passionate about writing clean code, understanding how systems work, and building products that create real value.",
+    "I’m Nabil Khairi, a software engineering enthusiast with a strong professional background in administration, operations, client service, financial planning, healthcare management, and executive support. My work experience has helped me develop strong problem-solving skills, communication skills, attention to detail, and the ability to understand real business needs. I’m passionate about software engineering because I enjoy building practical digital solutions that improve workflow, solve problems, and create value for users.",
   links: {
     github: "https://github.com/nabildev1196",
     linkedin: "",
@@ -38,22 +37,23 @@ export const profile = {
 
 export const navigation = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Journey", href: "#journey" },
+  { label: "Software Fit", href: "#software-fit" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const heroHighlights = [
-  ["Focus", "Clean code, scalable systems, useful products"],
-  ["Mindset", "Problem solver with strong product curiosity"],
-  ["Current Goal", "Growing into a trusted software engineer"],
+  ["Software Focus", "Clean, useful, and scalable digital products"],
+  ["Business Context", "Operations, finance, healthcare, and client workflows"],
+  ["Working Style", "Organized, detail-oriented, practical, and user-aware"],
 ] as const;
 
 export const aboutHighlights = [
-  "Practical problem solving",
-  "Clean, readable implementation",
-  "Curiosity about systems and products",
+  "Business-aware problem solving",
+  "Real operations experience",
+  "Reliable communication and execution",
 ];
 
 export type SkillGroup = {
@@ -66,34 +66,50 @@ export type SkillGroup = {
 // Edit these arrays to update the skills shown on the website.
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend",
+    title: "Technical Skills",
     icon: Code2,
     accent: "text-teal-200 bg-teal-400/10 ring-teal-300/20",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Git",
+      "GitHub",
+      "Cursor",
+    ],
   },
   {
-    title: "Backend",
-    icon: ServerCog,
-    accent: "text-amber-200 bg-amber-400/10 ring-amber-300/20",
-    skills: ["Node.js", "Express", "REST API"],
-  },
-  {
-    title: "Database",
-    icon: Database,
-    accent: "text-cyan-200 bg-cyan-400/10 ring-cyan-300/20",
-    skills: ["MySQL", "PostgreSQL", "MongoDB"],
-  },
-  {
-    title: "Tools",
-    icon: Wrench,
-    accent: "text-rose-200 bg-rose-400/10 ring-rose-300/20",
-    skills: ["Git", "GitHub", "VS Code", "Cursor"],
-  },
-  {
-    title: "Soft Skills",
+    title: "Professional Skills",
     icon: Users,
-    accent: "text-lime-200 bg-lime-400/10 ring-lime-300/20",
-    skills: ["Problem Solving", "Communication", "Fast Learner", "Teamwork"],
+    accent: "text-amber-200 bg-amber-400/10 ring-amber-300/20",
+    skills: [
+      "Operations Management",
+      "Administrative Coordination",
+      "Client Communication",
+      "Customer Service",
+      "Lead Management",
+      "Sales Closing",
+      "Upselling",
+      "Stakeholder Coordination",
+      "Calendar Management",
+      "Vendor & Supplier Coordination",
+      "Renovation Coordination",
+      "Basic Financial Monitoring",
+      "Basic Digital Marketing Exposure",
+      "Meta Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "SEO Fundamentals",
+      "Confidentiality",
+      "Problem Solving",
+      "Leadership",
+      "Attention to Detail",
+    ],
   },
 ];
 
@@ -110,76 +126,116 @@ export type Project = {
 // Replace these sample projects with your real portfolio work later.
 export const projects: Project[] = [
   {
-    title: "Personal Portfolio Website",
+    title: "Scholarship Management Dashboard",
     description:
-      "A polished portfolio built to present skills, projects, and professional identity with strong visual hierarchy.",
+      "A concept dashboard for organizing scholarship programme documents, communication, schedules, and stakeholder workflows.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://nabildev1196.github.io/Portfolio-Saya-1/",
-    githubUrl: "https://github.com/nabildev1196/Portfolio-Saya-1",
-    status: "Live",
-    icon: Globe2,
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A productivity interface for organizing tasks, tracking progress, and making daily work easier to manage.",
-    stack: ["React", "Node.js", "REST API"],
     status: "Concept",
     icon: Layers3,
   },
   {
-    title: "E-Commerce Landing Page",
+    title: "Clinic Appointment System",
     description:
-      "A conversion-focused product landing page concept with responsive layout, clean content, and modern styling.",
+      "A practical clinic workflow concept for appointment tracking, patient inquiries, treatment follow-ups, and staff coordination.",
+    stack: ["React", "Node.js", "REST API"],
+    status: "Concept",
+    icon: ServerCog,
+  },
+  {
+    title: "Personal Finance Goal Planner",
+    description:
+      "A planning tool concept for tracking financial goals, retirement planning milestones, risk profiles, and client conversations.",
     stack: ["TypeScript", "Next.js", "Tailwind CSS"],
+    status: "Concept",
+    icon: Brain,
+  },
+  {
+    title: "Executive Schedule Manager",
+    description:
+      "A focused scheduling concept for managing calendars, appointments, reminders, and high-priority executive arrangements.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "Concept",
     icon: Rocket,
   },
 ];
 
-export const journey = [
+export const professionalExperiences = [
   {
-    title: "Started learning programming",
-    text: "Built the foundation by learning core programming concepts and how to think through problems step by step.",
+    title: "Administrative Officer",
+    company: "Jameel Education Foundation UK-USIM Scholarship Programme",
+    duration: "2022 – Present",
+    type: "Full-time",
+    points: [
+      "Manage administrative operations related to scholarship programme activities.",
+      "Coordinate documentation, communication, scheduling, and stakeholder support.",
+      "Support smooth programme execution through organized workflow and attention to detail.",
+      "Handle administrative tasks with professionalism, confidentiality, and consistency.",
+    ],
   },
   {
-    title: "Built personal projects",
-    text: "Turned ideas into working interfaces and learned by shipping small, practical products.",
+    title: "Unit Trust Consultant & Private Retirement Scheme Consultant",
+    company: "Public Mutual Berhad",
+    duration: "Jan 2026 – Present",
+    type: "Freelance",
+    points: [
+      "Help clients plan for long-term financial goals through investment and retirement planning.",
+      "Provide client-focused support by understanding goals, needs, and risk profiles.",
+      "Balance this part-time role by dedicating focused, high-quality time to each client.",
+      "Develop communication, trust-building, and advisory skills through client engagement.",
+    ],
   },
   {
-    title: "Improved frontend and backend skills",
-    text: "Expanded into full-stack thinking with modern frontend tools, APIs, databases, and maintainable structure.",
+    title: "Manager",
+    company: "Dental Klub Sdn Bhd",
+    duration: "Oct 2021 – Oct 2024",
+    location: "Kajang, Selangor",
+    type: "Full-time, On-site",
+    points: [
+      "Managed daily clinic operations with a focus on patient experience and operational efficiency.",
+      "Handled customer service, patient inquiries, leads, closing, and treatment-related upselling.",
+      "Coordinated workflows between patients, dentists, staff, suppliers, and external vendors.",
+      "Supported renovation coordination, supplier comparison, equipment sourcing, and clinic setup needs.",
+      "Monitored clinic expenses and gained basic exposure to Meta Ads, Google Ads, TikTok Ads, and SEO.",
+    ],
   },
   {
-    title: "Currently growing as a software engineer",
-    text: "Focused on clean code, product judgment, and becoming the kind of engineer teams can trust with real problems.",
+    title: "Personal Assistant to Dato Sri",
+    duration: "2021 – May 2026",
+    type: "Executive Support",
+    points: [
+      "Managed day-to-day personal and professional arrangements with a high level of confidentiality.",
+      "Handled calendar management, corporate correspondence, and high-level business arrangements.",
+      "Coordinated meetings with senior stakeholders, including embassy-related business meetings in Malaysia.",
+      "Supported personal and professional workflows through organization, discretion, and reliability.",
+    ],
   },
 ];
+
+export const engineeringConnection = {
+  title: "How this connects to software engineering",
+  text:
+    "My professional background gives me a practical advantage in software engineering. I understand how real businesses operate, how users think, how customers make decisions, and how internal workflows can be improved through better systems. As I grow in software engineering, I aim to build clean, useful, and scalable digital products that solve real problems for real users.",
+};
 
 export const values = [
   {
     title: "Clean and maintainable code",
-    text: "I aim for code that is readable, consistent, and easy for future teammates to build on.",
+    text: "I value readable implementation that can be improved and extended without confusion.",
     icon: Braces,
   },
   {
-    title: "User-focused product thinking",
-    text: "I care about building software that solves real needs, not just checking technical boxes.",
+    title: "Workflow-first product thinking",
+    text: "I look at software through the lens of daily operations, real users, and practical outcomes.",
     icon: Brain,
   },
   {
-    title: "Continuous learning",
-    text: "I stay curious, improve through practice, and keep sharpening my engineering fundamentals.",
-    icon: Sparkles,
-  },
-  {
     title: "Strong attention to detail",
-    text: "I look closely at edge cases, interface quality, and the small choices that make products feel solid.",
+    text: "My operations background trained me to notice gaps, edge cases, and execution details.",
     icon: TerminalSquare,
   },
   {
     title: "Reliable communication",
-    text: "I value clarity, follow-through, and keeping people aligned while work is moving.",
+    text: "I aim to keep expectations clear, communicate progress, and follow through consistently.",
     icon: MessageCircle,
   },
 ];

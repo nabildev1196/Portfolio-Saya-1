@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Nabil Khairi | Software Engineer",
   description:
-    "Personal portfolio of Nabil Khairi, a software engineer focused on clean, useful, and scalable digital products.",
+    "Portfolio of Nabil Khairi, a software engineering enthusiast with real-world experience in operations, administration, finance, healthcare management, and client service.",
 };
 
 export default function RootLayout({

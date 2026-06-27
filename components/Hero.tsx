@@ -16,7 +16,7 @@ export function Hero() {
         <div>
           <div className="reveal-up inline-flex items-center gap-2 rounded-md border border-teal-200/20 bg-teal-300/10 px-3 py-2 text-sm font-medium text-teal-100">
             <Sparkles className="size-4" aria-hidden="true" />
-            Open to software engineering opportunities
+            Software engineering with real business context
           </div>
 
           <h1
@@ -55,15 +55,28 @@ export function Hero() {
 
         <div className="reveal-up-delay-2 relative">
           <Card hover={false} className="p-5 sm:p-6">
-            <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
-              <div>
-                <p className="font-mono text-xs uppercase text-amber-200">
-                  Engineer Profile
-                </p>
-                <p className="mt-1 text-lg font-semibold text-stone-50">{profile.name}</p>
+            <div className="mb-5 grid gap-5 border-b border-white/10 pb-5 sm:grid-cols-[132px_1fr]">
+              <div className="overflow-hidden rounded-lg border border-white/10 bg-stone-100">
+                <img
+                  src={profile.photo}
+                  alt="Portrait of Nabil Khairi"
+                  className="aspect-[4/5] h-full w-full object-cover object-[center_35%]"
+                />
               </div>
-              <div className="grid size-11 place-items-center rounded-md bg-rose-300/10 text-rose-100 ring-1 ring-rose-200/20">
-                <MousePointer2 className="size-5" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs uppercase text-amber-200">
+                    Professional Profile
+                  </p>
+                  <p className="mt-1 text-xl font-semibold text-stone-50">{profile.name}</p>
+                  <p className="mt-3 text-sm leading-6 text-stone-300">
+                    Software engineering enthusiast with hands-on experience in operations,
+                    administration, client service, finance, and healthcare workflows.
+                  </p>
+                </div>
+                <div className="grid size-11 shrink-0 place-items-center rounded-md bg-rose-300/10 text-rose-100 ring-1 ring-rose-200/20">
+                  <MousePointer2 className="size-5" aria-hidden="true" />
+                </div>
               </div>
             </div>
 

@@ -12,11 +12,11 @@ export function Skills() {
         <SectionHeading
           id="skills-heading"
           eyebrow="Skills"
-          title="A focused toolkit for modern product engineering."
-          description="My skill set spans user interfaces, APIs, databases, tooling, and the communication habits that help teams move with clarity."
+          title="Technical skills supported by real business experience."
+          description="I combine modern web development fundamentals with professional experience in operations, client service, coordination, and workflow management."
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {skillGroups.map((group) => {
             const Icon = group.icon;
 

@@ -12,7 +12,7 @@ export function About() {
         <SectionHeading
           id="about-heading"
           eyebrow="About Me"
-          title="Building the kind of software people can trust."
+          title="Software engineering shaped by real-world operations."
           description={profile.about}
         />
 
