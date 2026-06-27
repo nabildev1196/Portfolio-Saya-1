@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070706;
+  --foreground: #f4f0e8;
+  --muted: #a8a29a;
+  --panel: rgba(22, 21, 18, 0.72);
+  --panel-strong: rgba(32, 31, 27, 0.88);
+  --border: rgba(245, 245, 244, 0.1);
+  --teal: #2dd4bf;
+  --amber: #fbbf24;
+  --rose: #fb7185;
+  --cyan: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(115deg, rgba(45, 212, 191, 0.1), transparent 30%),
+    linear-gradient(245deg, rgba(251, 191, 36, 0.09), transparent 28%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.32);
+  color: white;
+}
+
+.noise-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.65'/%3E%3C/svg%3E");
+}
+
+.animated-grid {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+}
+
+.animated-grid::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(45, 212, 191, 0.12), transparent 24%, rgba(251, 191, 36, 0.1) 48%, transparent 70%, rgba(251, 113, 133, 0.11));
+  background-size:
+    72px 72px,
+    72px 72px,
+    100% 100%;
+  transform: perspective(900px) rotateX(62deg) translateY(-10%);
+  transform-origin: top;
+  animation: grid-drift 16s linear infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #f8fafc, #99f6e4 34%, #fde68a 68%, #fecdd3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, rgba(32, 31, 27, 0.82), rgba(16, 15, 13, 0.62));
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
+}
+
+.card-hover {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45, 212, 191, 0.32);
+  background: linear-gradient(145deg, rgba(39, 39, 35, 0.9), rgba(18, 18, 16, 0.76));
+  box-shadow: 0 22px 90px rgba(45, 212, 191, 0.08);
+}
+
+.reveal-up {
+  animation: reveal-up 700ms ease both;
+}
+
+.reveal-up-delay-1 {
+  animation: reveal-up 700ms ease 90ms both;
+}
+
+.reveal-up-delay-2 {
+  animation: reveal-up 700ms ease 180ms both;
+}
+
+.reveal-up-delay-3 {
+  animation: reveal-up 700ms ease 270ms both;
+}
+
+@keyframes grid-drift {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  to {
+    background-position:
+      0 72px,
+      72px 0,
+      0 0;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
