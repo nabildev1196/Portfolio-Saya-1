@@ -18,6 +18,7 @@
 }
 
 html {
+  scroll-padding-top: 8rem;
   scroll-behavior: smooth;
 }
 
@@ -83,6 +84,15 @@ textarea {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid rgba(45, 212, 191, 0.86);
+  outline-offset: 3px;
 }
 
 .glass-panel {

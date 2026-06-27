@@ -30,11 +30,31 @@ export const profile = {
   about:
     "I’m Nabil Khairi, a software engineer who enjoys solving problems, learning new technologies, and turning ideas into practical software. I’m passionate about writing clean code, understanding how systems work, and building products that create real value.",
   links: {
-    github: "https://github.com/your-username",
-    linkedin: "https://linkedin.com/in/your-username",
+    github: "https://github.com/nabildev1196",
+    linkedin: "",
     email: "mailto:nabil@example.com",
   },
 };
+
+export const navigation = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Journey", href: "#journey" },
+  { label: "Contact", href: "#contact" },
+];
+
+export const heroHighlights = [
+  ["Focus", "Clean code, scalable systems, useful products"],
+  ["Mindset", "Problem solver with strong product curiosity"],
+  ["Current Goal", "Growing into a trusted software engineer"],
+] as const;
+
+export const aboutHighlights = [
+  "Practical problem solving",
+  "Clean, readable implementation",
+  "Curiosity about systems and products",
+];
 
 export type SkillGroup = {
   title: string;
@@ -81,8 +101,9 @@ export type Project = {
   title: string;
   description: string;
   stack: string[];
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  status: "Live" | "Concept";
   icon: LucideIcon;
 };
 
@@ -93,8 +114,9 @@ export const projects: Project[] = [
     description:
       "A polished portfolio built to present skills, projects, and professional identity with strong visual hierarchy.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://nabildev1196.github.io/Portfolio-Saya-1/",
+    githubUrl: "https://github.com/nabildev1196/Portfolio-Saya-1",
+    status: "Live",
     icon: Globe2,
   },
   {
@@ -102,8 +124,7 @@ export const projects: Project[] = [
     description:
       "A productivity interface for organizing tasks, tracking progress, and making daily work easier to manage.",
     stack: ["React", "Node.js", "REST API"],
-    liveUrl: "#",
-    githubUrl: "#",
+    status: "Concept",
     icon: Layers3,
   },
   {
@@ -111,8 +132,7 @@ export const projects: Project[] = [
     description:
       "A conversion-focused product landing page concept with responsive layout, clean content, and modern styling.",
     stack: ["TypeScript", "Next.js", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "#",
+    status: "Concept",
     icon: Rocket,
   },
 ];

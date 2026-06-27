@@ -1,20 +1,25 @@
 import { Mail, Send } from "lucide-react";
 import { Container } from "@/components/Container";
+import { Section } from "@/components/Section";
 import { SectionHeading } from "@/components/SectionHeading";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Card } from "@/components/ui/Card";
+import { TextField } from "@/components/ui/TextField";
 import { profile, socialLinks } from "@/data/portfolio";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-28">
+    <Section id="contact">
       <Container>
         <SectionHeading
+          id="contact-heading"
           eyebrow="Contact"
           title="Let’s Build Something Together"
           description="Have an opportunity, collaboration, or project idea? I’d be glad to connect and talk through how I can help."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="glass-panel rounded-lg p-6">
+          <Card hover={false} className="p-6">
             <div className="grid size-12 place-items-center rounded-md bg-teal-300/10 text-teal-100 ring-1 ring-teal-200/20">
               <Mail className="size-6" aria-hidden="true" />
             </div>
@@ -27,75 +32,80 @@ export function Contact() {
               product conversations where thoughtful engineering can create real value.
             </p>
 
-            <a
+            <ButtonLink
               href={profile.links.email}
-              className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-stone-100 transition hover:border-teal-200/30 hover:bg-teal-300/10"
+              variant="outline"
+              size="sm"
+              className="mt-6 w-full justify-center sm:w-auto"
             >
               {profile.email}
-            </a>
+            </ButtonLink>
 
             <div className="mt-8 flex flex-wrap gap-3">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
 
                 return (
-                  <a
+                  <ButtonLink
                     key={link.label}
                     href={link.href}
-                    className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-black/20 px-4 py-2.5 text-sm font-semibold text-stone-200 transition hover:border-amber-200/30 hover:text-white"
+                    icon={Icon}
+                    variant="ghost"
+                    size="sm"
                   >
-                    <Icon className="size-4" aria-hidden="true" />
                     {link.label}
-                  </a>
+                  </ButtonLink>
                 );
               })}
             </div>
-          </div>
+          </Card>
 
-          <form className="glass-panel rounded-lg p-6">
-            {/* This form is currently UI-only. Connect it to an API route or form service later. */}
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-semibold text-stone-200">Name</span>
-                <input
-                  type="text"
+          <Card
+            as="section"
+            hover={false}
+            className="p-6"
+            aria-label="Contact form"
+          >
+            <form action={profile.links.email} method="post" encType="text/plain">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <TextField
+                  label="Name"
                   name="name"
                   placeholder="Your name"
-                  className="mt-2 w-full rounded-md border border-white/10 bg-black/25 px-4 py-3 text-sm text-stone-100 outline-none transition placeholder:text-stone-600 focus:border-teal-200/50 focus:ring-4 focus:ring-teal-300/10"
+                  autoComplete="name"
+                  required
                 />
-              </label>
 
-              <label className="block">
-                <span className="text-sm font-semibold text-stone-200">Email</span>
-                <input
-                  type="email"
+                <TextField
+                  label="Email"
                   name="email"
+                  type="email"
                   placeholder="you@example.com"
-                  className="mt-2 w-full rounded-md border border-white/10 bg-black/25 px-4 py-3 text-sm text-stone-100 outline-none transition placeholder:text-stone-600 focus:border-teal-200/50 focus:ring-4 focus:ring-teal-300/10"
+                  autoComplete="email"
+                  required
                 />
-              </label>
-            </div>
+              </div>
 
-            <label className="mt-5 block">
-              <span className="text-sm font-semibold text-stone-200">Message</span>
-              <textarea
+              <TextField
+                label="Message"
                 name="message"
-                rows={6}
                 placeholder="Tell me about your project or opportunity..."
-                className="mt-2 w-full resize-none rounded-md border border-white/10 bg-black/25 px-4 py-3 text-sm text-stone-100 outline-none transition placeholder:text-stone-600 focus:border-teal-200/50 focus:ring-4 focus:ring-teal-300/10"
+                multiline
+                required
+                className="mt-5 block"
               />
-            </label>
 
-            <button
-              type="button"
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-teal-300 px-5 py-3 text-sm font-bold text-stone-950 transition hover:bg-teal-200 sm:w-auto"
-            >
-              Send Message
-              <Send className="size-4" aria-hidden="true" />
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-teal-300 px-5 py-3 text-sm font-bold text-stone-950 transition hover:bg-teal-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal-300/20 sm:w-auto"
+              >
+                Send Message
+                <Send className="size-4" aria-hidden="true" />
+              </button>
+            </form>
+          </Card>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:pages": "next build && node scripts/copy-pages-output.mjs",
-    "start": "next start",
+    "build:pages": "node scripts/build-pages.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

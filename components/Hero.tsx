@@ -1,10 +1,16 @@
 import { ArrowRight, Mail, MousePointer2, Sparkles } from "lucide-react";
 import { Container } from "@/components/Container";
-import { profile } from "@/data/portfolio";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Card } from "@/components/ui/Card";
+import { heroHighlights, profile } from "@/data/portfolio";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden pt-28 sm:pt-32">
+    <section
+      id="home"
+      aria-labelledby="home-heading"
+      className="relative min-h-screen overflow-hidden pt-36 md:pt-32"
+    >
       <div className="animated-grid" aria-hidden="true" />
       <Container className="relative z-10 grid min-h-[calc(100vh-7rem)] items-center gap-12 pb-16 lg:grid-cols-[1.08fr_0.92fr]">
         <div>
@@ -13,7 +19,10 @@ export function Hero() {
             Open to software engineering opportunities
           </div>
 
-          <h1 className="reveal-up-delay-1 mt-7 max-w-4xl text-5xl font-semibold leading-tight text-stone-50 sm:text-6xl lg:text-7xl">
+          <h1
+            id="home-heading"
+            className="reveal-up-delay-1 mt-7 max-w-4xl text-5xl font-semibold leading-tight text-stone-50 sm:text-6xl lg:text-7xl"
+          >
             <span className="gradient-text">{profile.headline}</span>
           </h1>
 
@@ -26,25 +35,26 @@ export function Hero() {
           </p>
 
           <div className="reveal-up-delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
+            <ButtonLink
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-teal-300 px-5 py-3 text-sm font-bold text-stone-950 transition hover:bg-teal-200"
+              icon={ArrowRight}
+              className="w-full sm:w-auto"
             >
               View My Work
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
-            <a
+            </ButtonLink>
+            <ButtonLink
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/12 bg-white/5 px-5 py-3 text-sm font-bold text-stone-50 transition hover:border-amber-200/40 hover:bg-amber-300/10"
+              icon={Mail}
+              variant="outline"
+              className="w-full sm:w-auto"
             >
               Contact Me
-              <Mail className="size-4" aria-hidden="true" />
-            </a>
+            </ButtonLink>
           </div>
         </div>
 
         <div className="reveal-up-delay-2 relative">
-          <div className="glass-panel rounded-lg p-5 sm:p-6">
+          <Card hover={false} className="p-5 sm:p-6">
             <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
               <div>
                 <p className="font-mono text-xs uppercase text-amber-200">
@@ -58,11 +68,7 @@ export function Hero() {
             </div>
 
             <div className="space-y-4">
-              {[
-                ["Focus", "Clean code, scalable systems, useful products"],
-                ["Mindset", "Problem solver with strong product curiosity"],
-                ["Current Goal", "Growing into a trusted software engineer"],
-              ].map(([label, value]) => (
+              {heroHighlights.map(([label, value]) => (
                 <div
                   key={label}
                   className="rounded-md border border-white/10 bg-black/20 p-4 transition hover:border-teal-200/30"
@@ -74,7 +80,7 @@ export function Hero() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         </div>
       </Container>
     </section>
