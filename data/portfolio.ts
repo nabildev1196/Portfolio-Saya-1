@@ -199,14 +199,11 @@ export const professionalExperiences = [
     ],
   },
   {
-    title: "Personal Assistant to Dato Sri",
+    title: "Personal Assistant to Dato’ Sri / Private Office",
     duration: "2021 – May 2026",
     type: "Executive Support",
     points: [
-      "Managed day-to-day personal and professional arrangements with a high level of confidentiality.",
-      "Handled calendar management, corporate correspondence, and high-level business arrangements.",
-      "Coordinated meetings with senior stakeholders, including embassy-related business meetings in Malaysia.",
-      "Supported personal and professional workflows through organization, discretion, and reliability.",
+      "Provided executive and private office support with a strong focus on calendar management, corporate correspondence, confidential arrangements, stakeholder coordination, and high-level business meeting preparation.",
     ],
   },
 ];
